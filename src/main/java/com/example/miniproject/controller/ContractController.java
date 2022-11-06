@@ -14,7 +14,7 @@ import com.example.miniproject.impl.ContractImp;
 import com.example.miniproject.models.Contract;
 
 @Controller
-@RequestMapping("/dashboard/contract")
+@RequestMapping("/dashboard/contracts")
 public class ContractController {
 	@Autowired 
 	ContractImp contractImp;

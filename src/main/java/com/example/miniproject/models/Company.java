@@ -1,5 +1,6 @@
 package com.example.miniproject.models;
 
+import java.sql.Timestamp;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -20,6 +21,10 @@ public class Company {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	private String description;
+	private int nbEmp;
+	private String workField;
+	private Timestamp creationDate;
 	private String photo;
 	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
 	@JsonIgnore

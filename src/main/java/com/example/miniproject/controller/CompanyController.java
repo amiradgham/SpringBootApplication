@@ -14,7 +14,7 @@ import com.example.miniproject.impl.CompanyImp;
 import com.example.miniproject.models.Company;
 
 @Controller
-@RequestMapping("/dashboard/company")
+@RequestMapping("/dashboard/companys")
 public class CompanyController {
 	@Autowired 
 	CompanyImp companyImp;

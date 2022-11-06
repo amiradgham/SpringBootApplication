@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous">
     <link href="/css/style.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
-<title>Offers </title>
+<title>Users </title>
 </head>
 <body>
 <%@include file="navbar.jsp"%>
@@ -34,7 +34,7 @@
    <c:forEach items="${allOffers}" var="p" >
     <tr>
       <th scope="row">${p.id}</th>
-           <td><img src="http://127.0.0.1:8083/api/offer/getImage/${p.id}" width="80" height="80"></td>
+           <td><img src="http://127.0.0.1:8083/api/offer/getImage/${p.id}" width="40" height="40"></td>
            <td>${p.title}</td>
            <td>${p.description}</td>
            <td>${p.nbPost}</td>

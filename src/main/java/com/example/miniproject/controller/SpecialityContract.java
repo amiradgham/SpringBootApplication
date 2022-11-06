@@ -15,7 +15,7 @@ import com.example.miniproject.impl.SpecialityImp;
 import com.example.miniproject.models.Speciality;
 
 @Controller
-@RequestMapping("/dashboard/speciality")
+@RequestMapping("/dashboard/specialitys")
 public class SpecialityContract {
 	
 	@Autowired 
