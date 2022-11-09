@@ -16,6 +16,7 @@ public class SpecialityRestApi {
 @Autowired SpecialityImp specialityImp ;
 
 @GetMapping("/all")
+@CrossOrigin(origins = "*")
 public List<Speciality> getAllSpeciality(){
 	return specialityImp.getAllSpeciality();
 }

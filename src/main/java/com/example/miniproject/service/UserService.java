@@ -2,7 +2,9 @@ package com.example.miniproject.service;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,12 +79,14 @@ public class UserService implements UserImp {
 	            String tempUsername = user.getUsername();
 	            String password=user.getPassword();
 	            User user1 = getUserByUsername(tempUsername);
-
+	            Map<String, Object> map = new HashMap<>();
 	            if (user1 == null || !passwordEncoder.matches(password, user1.getPassword())) {
 	                return ResponseEntity.status(HttpStatus.OK).body("User Not found With This username");
 	            }
 	            token = getJWTToken(user.getUsername());
-	            return ResponseEntity.status(HttpStatus.OK).body(token);
+	            map.put("access_token", token);
+
+	            return ResponseEntity.status(HttpStatus.OK).body(map);
 
 	        }
 	        catch (Exception e) {

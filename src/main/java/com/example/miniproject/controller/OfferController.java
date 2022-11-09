@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.view.RedirectView;
 import com.example.miniproject.impl.CompanyImp;
 import com.example.miniproject.impl.ContractImp;
 import com.example.miniproject.impl.OfferImp;
@@ -58,10 +59,13 @@ public class OfferController {
 	}
 	
 	@PostMapping("/saveOffer")
-	public String saveOffer(@ModelAttribute Offer p)
+	public RedirectView saveOffer(@ModelAttribute Offer offer)
 	{
-		offerImp.saveOffer(p);
-		return "redirect:/offers/all";
+	 //Offer newOffer = new Offer(Integer.parseInt(offer.getId());
+		offerImp.saveOffer(offer);	
+		 RedirectView redirectView = new RedirectView();
+		    redirectView.setUrl("all");
+		    return redirectView;
 	}
 	
 	@GetMapping("/editOffer/{id}")

@@ -18,7 +18,7 @@
  <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">picture</th>
+
       <th scope="col">name</th>
       <th scope="col">description</th>
       <th scope="col">nbEmp</th>
@@ -31,7 +31,6 @@
    <c:forEach items="${allCompanys}" var="p" >
     <tr>
       <th scope="row">${p.id}</th>
-           <td><img src="http://127.0.0.1:8083/api/company/getImage/${p.id}" width="40" height="40"></td>
            <td>${p.name}</td>
            <td>${p.description}</td>
            <td>${p.nbEmp}</td>

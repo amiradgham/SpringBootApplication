@@ -6,6 +6,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 
@@ -24,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
           .antMatchers("/api/offer/getImage/**").permitAll()
           .antMatchers("/api/company/getImage/**").permitAll()
           .antMatchers("/auth/api/**").permitAll()
+          .antMatchers("/api/**").permitAll()
           .anyRequest().authenticated();
   http
           .csrf().disable();
@@ -32,6 +36,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 @Bean
 public BCryptPasswordEncoder passwordEncoder(){
   return new BCryptPasswordEncoder();
+}
+@Bean
+CorsConfigurationSource corsConfigurationSource() {
+    UrlBasedCorsConfigurationSource source = new
+            UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+    return source;
 }
 
 

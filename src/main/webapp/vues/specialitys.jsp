@@ -18,32 +18,17 @@
  <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">picture</th>
-      <th scope="col">title</th>
-      <th scope="col">description</th>
-      <th scope="col">nbPost</th>
-      <th scope="col">experience</th>
-      <th scope="col">studyLevel</th>
-      <th scope="col">company</th>
-      <th scope="col">speciality</th>
-      <th scope="col">expirationDate</th>
+      <th scope="col">name</th>
+       <td scope="col">creationDate</td>
       <th scope="col">action</th>
     </tr>
   </thead>
   <tbody>
-   <c:forEach items="${allOffers}" var="p" >
+   <c:forEach items="${allSpecialitys}" var="p" >
     <tr>
       <th scope="row">${p.id}</th>
-           <td><img src="http://127.0.0.1:8083/api/offer/getImage/${p.id}" width="40" height="40"></td>
-           <td>${p.title}</td>
-           <td>${p.description}</td>
-           <td>${p.nbPost}</td>
-           <td>${p.experience}</td>
-           <td>${p.studyLevel}</td>
-           <td>${p.company.name}</td>
-           <td>${p.speciality.name}</td>
-           <td>${p.expirationDate}</td>
- 
+           <td>${p.name}</td>
+           <td>${p.creationDate}</td> 
            <td>
            	<a href="/dashboard/offers/deleteOffer/${p.id}" class="btn btn-danger">
       		<span class="fa fa-trash"></span>

@@ -12,7 +12,6 @@
  <div class="page-wrapper">
  <div class="nav-wrapper">
   <div class="grad-bar"></div>
-  
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -25,13 +24,10 @@
            <li><a href="/dashboard/specialitys/all">Speciality</a></li>
            <li><a href="/dashboard/contracts/all">Contract</a></li>
         </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
+    
   </div>
 </nav>
-  
+
 <div class="container">
   <h3>Welcome back Adminer !</h3>
 </div>

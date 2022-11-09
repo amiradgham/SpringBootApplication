@@ -19,6 +19,7 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">name</th>
+       <td scope="col">creationDate</td>
       <th scope="col">action</th>
     </tr>
   </thead>
@@ -26,7 +27,8 @@
    <c:forEach items="${allContracts}" var="p" >
     <tr>
       <th scope="row">${p.id}</th>
-           <td>${p.name}</td> 
+           <td>${p.name}</td>
+            <td>${p.creationDate}</td> 
            <td>
            	<a href="/dashboard/offers/deleteOffer/${p.id}" class="btn btn-danger">
       		<span class="fa fa-trash"></span>
@@ -34,7 +36,6 @@
       	<a href="/dashboard/offers/editOffer/${p.id}" class="btn btn-warning">
       		<span class="fa fa-edit"></span>
       	</a></td>
-     
     </tr>
   </c:forEach>
   </tbody>

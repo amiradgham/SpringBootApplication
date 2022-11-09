@@ -11,9 +11,11 @@
 </head>
 <body>
 <%@include file="navbar.jsp"%>
-
 <div class="page-margin">
 <div class="container">
+<div class="text-right">
+ <a href="/dashboard/offers/addOffer"  >Add offer</a>
+</div>
 <table class="table table-striped">
  <thead>
     <tr>
@@ -43,15 +45,14 @@
            <td>${p.company.name}</td>
            <td>${p.speciality.name}</td>
            <td>${p.expirationDate}</td>
- 
            <td>
            	<a href="/dashboard/offers/deleteOffer/${p.id}" class="btn btn-danger">
       		<span class="fa fa-trash"></span>
       	</a>
       	<a href="/dashboard/offers/editOffer/${p.id}" class="btn btn-warning">
       		<span class="fa fa-edit"></span>
-      	</a></td>
-     
+      	</a>
+      	</td>
     </tr>
   </c:forEach>
   </tbody>

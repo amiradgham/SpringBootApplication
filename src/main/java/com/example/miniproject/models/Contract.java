@@ -1,5 +1,6 @@
 package com.example.miniproject.models;
 
+import java.sql.Timestamp;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ public class Contract {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	private Timestamp creationDate;
 	@ManyToMany(mappedBy = "contract", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<Offer> Offer;	

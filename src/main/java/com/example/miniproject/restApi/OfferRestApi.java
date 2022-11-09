@@ -17,11 +17,14 @@ public class OfferRestApi {
 @Autowired OfferImp offerImp ;
 
 @GetMapping("/all")
+@CrossOrigin(origins = "http://localhost:4200")
 public List<Offer> getAllOffer(){
 	return offerImp.getAllOffers();
 }
 
 @PostMapping(path="/add")
+@CrossOrigin(origins = "http://localhost:4200")
+
 public void AddOfferWithImage(@RequestParam("offer") String p, @RequestParam(value="file",required= false) MultipartFile mf ) throws IOException{
 	Offer o = new ObjectMapper().readValue(p,Offer.class);
 	offerImp.AddOfferWithImage(o,mf);
@@ -44,6 +47,7 @@ public byte[] getImage(@PathVariable("id") int id ) throws IOException{
 }
 
 @DeleteMapping("/delete/{id}")
+@CrossOrigin(origins = "http://localhost:4200")
 public void deleteOffer(@PathVariable(value = "id") int id ) {
 	offerImp.deleteOffer(id);	
 }

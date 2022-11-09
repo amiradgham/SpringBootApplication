@@ -17,7 +17,9 @@ public class CompanyRestApi {
 
 @Autowired CompanyImp companyImp ;
 
+
 @GetMapping("/all")
+@CrossOrigin(origins = "http://localhost:4200")
 public List<Company> getAllCompany(){
 	return companyImp.getAllCompany();
 }

@@ -21,7 +21,6 @@ public class Offer {
 	private Integer nbPost;
 	private String experience;
 	private String langue;
-	private String genre;
 	private String studyLevel;
 	private Timestamp publishDate;
 	private Timestamp expirationDate;
